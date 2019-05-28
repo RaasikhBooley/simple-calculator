@@ -1,0 +1,31 @@
+* {
+    margin: 0em;
+}
+
+button {
+    margin: 0.5em;
+    width: 19em;
+    height: 4em;
+}
+
+td {
+    padding: 0.5em;
+}
+
+#calculator {
+    margin: 0.5em;
+    width: 14.7em;
+    border: 0.5em solid black;
+}
+
+.btn {
+    width: 3em;
+    height: 3em;
+    color: blue;
+}
+
+.screen {
+    padding: 1em;
+    margin: 0.3em;
+    width: 14.9em;
+}

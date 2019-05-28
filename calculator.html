@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- css link -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <!-- botton to hide/show calculator -->
+    <button onclick="toggle()">Show/Hide</button>
+    <!-- calculator -->
+    <div id="calculator">
+        <!-- calculator's screen or textfield -->
+        <form name="calculate">
+            <input class="screen" name="screen">
+        </form>
+        <!-- calculator's numbers and operators buttons -->
+        <table>
+            <tr>
+                <td><input class="btn" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="btn" type="button" value="2" onclick="insert(2)"></td>
+                <td><input class="btn" type="button" value="3" onclick="insert(3)"></td>
+                <td><input class="btn" type="button" value="+" onclick="insert('+')"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" value="4" onclick="insert(4)"></td>
+                <td><input class="btn" type="button" value="5" onclick="insert(5)"></td>
+                <td><input class="btn" type="button" value="6" onclick="insert(6)"></td>
+                <td><input class="btn" type="button" value="-" onclick="insert('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" value="7" onclick="insert(7)"></td>
+                <td><input class="btn" type="button" value="8" onclick="insert(8)"></td>
+                <td><input class="btn" type="button" value="9" onclick="insert(9)"></td>
+                <td><input class="btn" type="button" value="x" onclick="insert('*')"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" value="C" onclick="clean()"></td>
+                <td><input class="btn" type="button" value="0" onclick="insert(0)"></td>
+                <td><input class="btn" type="button" value="=" onclick="equels()"></td>
+                <td><input class="btn" type="button" value="/" onclick="insert('/')"></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- javascript -->
+    <script type="text/javascript">
+        function toggle() {
+            // toggle to hide and show calculator
+            var ninjalator = document.getElementById("calculator");
+            if(ninjalator.style.display==="none") {
+                ninjalator.style.display="block"
+            } else {
+                ninjalator.style.display="none";
+            }
+        }
+        function insert(num) {
+            // adds or inserts the numbers and operators to the textfield or screen
+            document.calculate.screen.value = document.calculate.screen.value+num;
+        }
+        function equels() {
+            // evaluates the sum that was entered in the textfield or screen and gives the result
+            document.calculate.screen.value = eval(document.calculate.screen.value);
+        }
+        function clean() {
+            // clears or cleans everything from the textfield or screen
+            document.calculate.screen.value = "";
+        }
+    </script>
+</body>
+</html>
